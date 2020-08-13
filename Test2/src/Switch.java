@@ -43,6 +43,9 @@ public class Switch {
                     System.out.printf("您出了：%d，系统出了：%d", Result, SystemResult);
                     System.out.println("你赢了。");
                 }
+                break;
+            default:
+                System.out.println("请重新输入。");
         }
     }
 }
