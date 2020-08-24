@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Switch {
     public static void main(String[] args) {
         Scanner scanner = new Scanner();
-        System.out.prinln
         int number = 3;
         switch (number) {
             case 1 -> System.out.println("Number1");
