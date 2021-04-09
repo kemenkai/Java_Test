@@ -43,5 +43,16 @@ class VariableTest {
 				System.out.println('*' + "\t" + '*');
 				System.out.println('*' + '\t' + "*");
 				System.out.println('*' + ('\t' + "*"));
+
+				System.out.println("*********************************")
+				//String str1 = 123; //编译不通过
+				String str1 = 123 + "";
+				System.out.println(str1); // "123"
+
+				//int num1 = str1; // 编译不通过，不兼容的类型
+				//int num1 = (int)str1; // 编译不通过，不兼容的类型
+
+				int num1 = Integer.parseInt(str1); // 转换为整形
+				System.out.parseInt(num1); // 123
 		}
 }
