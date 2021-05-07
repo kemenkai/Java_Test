@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="FamilyAccount" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="FamilyAccount" />
+    <module name="Project1-家庭收支记账软件" />
+    <projectPathOnTarget name="projectPathOnTarget" value="/mnt/c/opt/JetBrains/apps/IDEA-U/ch-0/211.6693.111/jbr/bin /Project1-家庭收支记账软件" />
+    <target name="WSL - centos7-1" />
+    <selectedOptions>
+      <option name="environmentVariables" visible="false" />
+    </selectedOptions>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
