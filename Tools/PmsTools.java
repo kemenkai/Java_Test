@@ -115,4 +115,14 @@ public class PmsTools {
         }
         return null;
     }
+
+    public String toDateSecond(long timestamp) {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        return dateTimeFormatter.format(Instant.ofEpochSecond(timestamp).atZone(ZoneId.systemDefault()));
+    }
+
+    public String toDateMillisecond(long timestamp) {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SS");
+        return dateTimeFormatter.format(Instant.ofEpochMilli(timestamp).atZone(ZoneId.systemDefault()));
+    }
 }
