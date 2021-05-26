@@ -22,7 +22,7 @@ class IdentifierTest {
     public static void main (String[] args) {
         // int myNumber = 1001;
         int mynumber = 1002;
-	System.out.println(myNumber);
+//	System.out.println(myNumber);
     }
 }
 // 示例1

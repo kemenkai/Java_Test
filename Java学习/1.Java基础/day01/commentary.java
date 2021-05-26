@@ -12,25 +12,33 @@
  *      注释内容可以被JDK提供的工具，javadoc 所解析，生成一套以网页文件形式体现的该程序的说明文档
  * 五. 多行注释是不可以嵌套使用的
  *
- */
+ *//*
 
+
+*/
 /**
  * 文档注释
  * @author kemengkai
  * @version v1.0
  * 这是我的java程序!
- */
+ *//*
+
 public class HelloChina {
-  /*
+  */
+/*
    * 多行注释
    * 如下的mian方法是程序的入口！
    * mian的格式是固定的！
+   *//*
+
    */
-   /**
+/**
     * 如下的方法是mian()，作用：程序的入口
-    */
+    *//*
+
   public static void main (String[] args) {
     // 单行注释：如下的语句表示输出到控制台
     System.out.println("Hello,World!");
   }
 }
+*/

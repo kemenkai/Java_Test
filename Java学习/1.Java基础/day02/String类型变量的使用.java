@@ -5,7 +5,7 @@
  * 3.String可以和8种基本数据类型变量做运算,且运算只能是连接运算"+"
  * 4.运算的结果仍然是String类型
  */
-class VariableTest {
+/* class VariableTest {
     public static void main(String[] args) {
 				// 变量的定义
 				String s1 = "Hello,World!!!";
@@ -16,7 +16,7 @@ class VariableTest {
 
 				// char c = ''; // 编译不通过
 
-				//*********************************/
+				//  ********************************
 				int number = 1001;
 				String numberStr = "学号：";
 				String info = numberStr + number; // +: 连接运算
@@ -24,7 +24,7 @@ class VariableTest {
 				String info1 = info + b1;// +: 连接运算
 				System.out.println(info);
 
-				//*********************************/
+				//********************************
 				// 练习1
 				char c = 'a'; // a: 97 A: 65
 				int num = 10;
@@ -35,7 +35,7 @@ class VariableTest {
 				System.out.println((c + num) + str); // 107hello
 				System.out.println(str + num + c); // hello10a
 
-				System.out.println("*********************************")
+				System.out.println("*********************************");
 				// 练习2
 				// * *
 				// System.out.println("*	*");
@@ -44,7 +44,7 @@ class VariableTest {
 				System.out.println('*' + '\t' + "*");
 				System.out.println('*' + ('\t' + "*"));
 
-				System.out.println("*********************************")
+				System.out.println("*********************************");
 				//String str1 = 123; //编译不通过
 				String str1 = 123 + "";
 				System.out.println(str1); // "123"
@@ -53,6 +53,7 @@ class VariableTest {
 				//int num1 = (int)str1; // 编译不通过，不兼容的类型
 
 				int num1 = Integer.parseInt(str1); // 转换为整形
-				System.out.parseInt(num1); // 123
+//				System.out.parseInt(num1); // 123
 		}
 }
+*/

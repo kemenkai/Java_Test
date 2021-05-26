@@ -7,7 +7,7 @@
  *     2.3、同一个作用域内，不可以声明两个同名的变量。
  *
  */
-class VariableTest {
+/*class VariableTest {
     public static void main(String[] args) {
 	// 变量的定义
 	int myAge = 30;
@@ -37,3 +37,4 @@ class VariableTest {
 }
 
 // class VariableTest {} // 逆向思维，反证法
+*/

@@ -11,7 +11,7 @@
  * 说明：此时的容量大小指的是，表示数的范围的大和小。比如：float容量要大于long的容量
  */
 
-class VariableTest2 {
+/*class VariableTest2 {
     public static void main(String[] args) {
         // 1.编码情况
         long l = 123456; // 默认值为int型，int型赋值给long型，所以编译不报错
@@ -19,12 +19,12 @@ class VariableTest2 {
 
         // 过大的整数，编译失败
         // long = 123456789123456;
-        long = 123456789123456L;
+//        long = 123456789123456L;
 
-        /******************************/
+        /*****************************
         // 编译失败
         // flota f1 = 12.3;
-        flota f1 = 12.3F;
+//        flota f1 = 12.3F;
         // 2.编码情况2:
         // 整型常量，默认类型为int型
         // 浮点型常量，默认类型为double型
@@ -36,3 +36,5 @@ class VariableTest2 {
 
     }
 }
+
+*/
