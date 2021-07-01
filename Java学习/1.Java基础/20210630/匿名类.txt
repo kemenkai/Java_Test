@@ -1,0 +1,13 @@
+抽象类的匿名子类
+
+
+abstract A {
+    public abstract void eat();
+}
+
+// 创建了一个匿名子类的对象: a
+A a = new A() {
+    public void eat() {
+
+    }
+}
