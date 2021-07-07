@@ -1,0 +1,61 @@
+多线程的创建：
+    方式一：继承于Thread类
+        1.创建一个继承于Thread类的子类
+        2.重写Thread类的run()方法 --> 将此线程执行的操作声明在run()方法中
+        3.创建Thread类的子类的对象
+        4.通过此对象调用start()
+            作用1：启动当前线程
+            作用2：调用当前线程的run()方法
+
+
+    问题：
+        1.我们不能通过直接调用run()的方式启动线程
+        2.再启动一个线程，遍历100以内的偶数.不可以还让已经start()的线程去执行。
+         会报IllegalThreadStateException。
+         我们需要重写创建一个线程的对象。
+
+    例子：遍历100以内的所有的偶数
+    练习：创建两个分线程，其中一个线程遍历100以内的偶数，另一个线程遍历100以内的奇数。
+
+
+方式一：普通创建方法
+// 1.创建一个继承于Thread类的子类
+class MyThread extends Thread{
+    // 2.重写Thread类的run()方法
+    public void run() {
+        for (int i = 0; i< 100; i++) {
+            if(i % 2 ==0) {
+            System.out.println(i);
+            }
+        }
+    }
+}
+
+public static void main(String[] ages) {
+    // 3.创建Thread类的子类的对象
+    MyThread t1 = new MyThread();
+
+    // 4.通过此对象调用start()
+    t1.start();
+    //问题一： 我们不能通过直接调用run()的方式启动线程
+    // t1.run();
+    //问题二：再启动一个线程，遍历100以内的偶数。不可以还让已经start()的线程去执行。
+    // 会报IllegalThreadStateException
+    //t1.start();
+    // 我们需要重写创建一个线程的对象。
+    MyThread t2 = new MyThread();
+    t2.start();
+    // 如下操作仍然在main线程中执行的。
+    System.out.println("Hello");
+}
+方式一：
+创建Thread类的匿名子类的方式：
+new Thread() {
+    public void run() {
+        for (int i = 0; i< 100; i++) {
+            if(i % 2 ==0) {
+            System.out.println(i);
+            }
+        }
+    }
+}.start();
