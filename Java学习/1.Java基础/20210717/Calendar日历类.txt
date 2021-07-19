@@ -1,0 +1,24 @@
+Calendar日历类(抽象类)
+    1. 实例化
+    方式一：创建其子类的对象
+
+    方式二：调用其静态方法getInstance()
+    Calendar calendar = Calendar.getInstance();
+    System.out.println(calendar.getClass());
+
+    2.常用方法
+    get()
+        // 这个月的第几天
+        int days = calendar.get(Calendar.DAY_OF_MONTH);
+        // 这一年的第几天
+        int days = calendar.get(Calendar.DAY_OF_YEAR);
+
+    set()
+        // 这个月第几天，改成22号，知道22号是第几天
+        calendar.set(Calendar.DAY_OF_MONTH,22);
+    add()
+        // 这个月程序当前几号，加3天
+        calendar.add(Calendar.DAY_OF_MONTH,3);
+    getTime()
+
+    setTime()

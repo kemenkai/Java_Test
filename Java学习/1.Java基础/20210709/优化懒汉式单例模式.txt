@@ -1,0 +1,40 @@
+优化懒汉式单例模式
+
+
+使用同步机制将单例模式中的懒汉式改为写线程安全的
+
+
+
+
+
+
+
+
+
+class Order {
+    private Order() {}
+
+    private static Order instance = null;
+
+    // 方式一：同步代码块线程安全，效率稍差
+    // public static Order getInstance() {
+    //     synchroized(Order.class) {
+    //         if(instance == null) {
+    //             instance = new Order();
+    //         }
+    //         return instance;
+    //     }
+    // }
+
+    // 方式二：同步方法线程安全，效率更高
+    public static Order getInstance() {
+        if(instance == null) {
+            synchroized(Order.class) {
+                if(instance == null) {
+                    instance = new Order();
+                }
+            }
+        }
+        return instance;
+    }
+}

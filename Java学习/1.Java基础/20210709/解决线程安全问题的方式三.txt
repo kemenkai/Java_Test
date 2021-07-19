@@ -1,0 +1,58 @@
+解决线程安全问题的方式三: Lock锁 --> JDK 5.0 新增
+
+
+1.面试题： synchronized 与 Lock的异同
+    想同：二者都可以解决线程安全问题
+    不同：synchronized机制在执行完相应的同步代码以后，
+        自动的释放同步监视器
+        Lock需要手动的启动同步(lock())，
+        同时结束同步也需要手动的实现(unlock())
+
+面试题2：如何解决线程安全问题？有几种方法
+
+
+
+class MThread implements Runnable{
+    
+    private int ticket = 100;
+
+    // 1.实例化一个lock
+    private ReentrantLock locak = new ReentrantLock();
+
+    public void run() {
+        while(true) {
+        try{
+            // 2.调用lock(),锁定的方法
+            lock.lock();
+            if(ticket > 0) {    
+                    System.out.println(     Thread.currentThrea  d().getName() + 
+                    "卖票，票号为：" + ticket);
+                    ticket--;
+                } else {
+                    break;
+                }
+            }
+        }finally {
+            // 3.调用解锁，unlock()
+            lock.unlock();
+        }
+    }
+}
+
+public class ThreadTest1{
+    public static void main(String[] ages) {
+        MThread m1 = new MThread();
+
+        Thread t1 = new Thread(m1);
+        Thread t2 = new Thread(m1);
+        Thread t3 = new Thread(m1);
+
+        t1.setName("窗口1");
+        t2.setName("窗口2");
+        t3.setName("窗口3");
+
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}

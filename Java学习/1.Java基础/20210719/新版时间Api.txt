@@ -1,0 +1,14 @@
+新版时间Api
+localDate、localTime、localDateTime的使用
+
+说明：
+    1. localDateTime相较于localDate、localTime，使用频率要高
+
+
+// now(): 获取当前的日期、时间、日期+时间
+localDate localDate = localDate.now();
+localTime localTime = localTime.now();
+localDateTime localDateTime = localDateTime.now();
+
+//of(): 设置指定的年、月、日、时、分、秒。没有偏移量
+localDateTime localDateTime = localDateTime.of(2020,10,6,13,23,43);
