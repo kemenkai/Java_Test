@@ -3,6 +3,7 @@ localDate、localTime、localDateTime的使用
 
 说明：
     1. localDateTime相较于localDate、localTime，使用频率要高
+    2.类似于Calendar
 
 
 // now(): 获取当前的日期、时间、日期+时间
@@ -12,3 +13,34 @@ localDateTime localDateTime = localDateTime.now();
 
 //of(): 设置指定的年、月、日、时、分、秒。没有偏移量
 localDateTime localDateTime = localDateTime.of(2020,10,6,13,23,43);
+
+
+//getXxx()： 获取相关的属性
+// 这个月的第几天
+System.out.println(localDateTime.getDayOfMonth());
+// 这周的第几天，星期几
+System.out.println(localDateTime.getDayOfWeek());
+// 几月，单词版
+System.out.println(localDateTime.getMonth());
+// 几月，数字版
+System.out.println(localDateTime.getMonthValue());
+// 获取分钟
+System.out.println(localDateTime.getMinute());
+
+
+// withXxx(), 设置相关的属性
+// localDate,localTime,localDateTime，都有不可变性
+//当月的第几天
+localDateTime localDateTime1 = localDateTime.withDayOfMonth(22);
+System.out.println(localDateTime);
+System.out.println(localDateTime1);
+
+
+//plusXxx():增加相关属性的值
+// 不可变性
+// 加3个月
+localDateTime localDateTime1 = localDateTime.plusMonth(3);
+
+//minusXxx()：减少相关属性的值
+// 减6天
+localDateTime localDateTime1 = localDateTime.minusDays(6);
