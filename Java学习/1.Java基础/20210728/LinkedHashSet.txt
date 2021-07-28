@@ -1,0 +1,6 @@
+LinkedHashSet
+
+LinkedHashSet的使用
+    LinkedHashSet作为HashSet的子类，在添加数据的同时，每个数据还维护了两个引用，
+        记录此数据钱一个数据和后一个数据。
+    优点：对于频繁的遍历操作，LinkedHashSet效率高于HashSet。
