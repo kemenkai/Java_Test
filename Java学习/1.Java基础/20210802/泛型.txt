@@ -1,0 +1,76 @@
+泛型的使用
+    1. jdk5.0 新增的特性
+    2. 再集合中使用泛型：
+        总结：
+            2.1 集合接口或集合类在jdk5.0时都修改为带泛型的结构。
+            2.2 在实例化集合类时，可以指明具体的泛型类型。
+            2.3 指明完以后，在集合类或接口中凡是定义类或接口时，
+                内部结构(比如：方法、构造器、属性等)使用到类的泛型的位置，都指定为实例化时泛型的类型。
+                比如：add(E e) --> 实例化以后:add(Integer e)
+            2.4 注意点：泛型的类型必须是类，不能是基本数据类型。
+                需要用到基本数据类型的位置，拿包装类替代。
+            2.5 如果实例化时，没有指明泛型的类型。默认类型为java.lang.Object类型。
+    3. 如何自定义泛型结构：泛型类、泛型接口; 泛型方法
+        3.1 关于自定义泛型类、泛型接口： 
+            如果定义了泛型类，实例化时没有指明类的泛型，则认为此泛型类型为Object类型
+            子类在继承带泛型的父类时，指明了泛型类型。则实例化子类对象时，不在需要指明泛型。
+
+            注意：
+            静态方法中不能使用类的泛型
+            异常类不能声明为泛型类
+        3.2关于自定义泛型方法：
+            泛型方法：在方法中出现了泛型的结构，泛型参数与类的泛型参数没有任何关系。
+            换句话说，泛型方法所属的类是不是泛型类都没有关系。
+            泛型方法，可以声明为静态的。原有：泛型参数是在调用方法时确定的。并非在实例化类时确定。
+
+
+
+public void test() {
+    // 如果定义了泛型类，实例化时没有指明类的泛型，则认为此泛型类型为Object类型
+    // 要求：如果大家定义了类是带泛型的，建议在实例化时要指明类的泛型。
+    Order order1 = new Order();
+    order1.setObjectT(123);
+    order1.setObjectT("abc");
+
+    // 建议：实例化时指明类的泛型
+    Order<String> order2 = new Order<String>("orderA",101,"ORDER:A");
+    order2.setOrderT("A:hello");
+}
+
+
+
+
+
+// 自定义泛型类
+public class Order<T> {
+    
+    String orderName;
+    int OrderId
+
+    // 类的内部结构就可以使用类的泛型
+    T orderT;
+
+    public Order(){};
+
+    public Order(String orderName, int orderId, T orderT) {
+        this.orderName = orderName;
+        this.orderId = orderId;
+        This.orderT = orderT;
+    }
+
+    public T getOrderT() {
+        retrurn orderT;
+    }
+
+    public void setOrderT(T orderT) {
+        this.orderT = orderT;
+    }
+}
+
+// 自定义泛型方法
+// <E> 表明此方法中的E，是一个泛型变量
+// List<E> 表明List的类型是一个泛型类型，还未确定
+// E[] E表示前面申明过的E泛型变量
+public <E> List<E> test(E[] arr) {
+    
+}

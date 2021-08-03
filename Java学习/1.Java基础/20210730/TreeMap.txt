@@ -1,0 +1,16 @@
+TreeMap
+
+// 向TreeMap中添加key-value,要求key必须是由同一个类型创建的对象
+// 因为要按照key进行排序：自然排序，定制排序
+
+
+Tree map = new TreeMap();
+User u1 = new User("Tom", 23);
+User u2 = new User("Jerry", 22);
+User u3 = new User("Jack", 24);
+User u4 = new User("Rose", 25);
+
+map.put(u1, 92);
+map.put(u2, 93);
+map.put(u3, 94);
+map.put(u4, 95); 
