@@ -1,0 +1,51 @@
+获取运行时类的父类
+
+Class clazz = Person.class;
+
+Class superclass = clazz.getSuperclass();
+System.out.println(superclass);
+
+
+获取运行时类的带泛型的父类
+Class clazz = Person.class;
+
+Type genericSuperclass = clazz.getGenericSuperclass();
+System.out.println(genericSuperclass);
+
+
+获取运行时类的带泛型的父类的泛型
+Class clazz = Person.class;
+
+Type genericSuperclass = clazz.getGenericSuperclass();
+ParameterizedType paramType = (ParameterizedType) genericSuperclass;
+// 获取泛型类型
+Type[] actualTypeArguments = paramType.getActualTypeArguments();
+System.out.println(actualTypeArguments[0]);
+System.out.println(actualTypeArguments[0].getTypeName);
+
+
+获取运行时类实现的接口
+Class clazz = Person.class;
+Class[] interfaces = clazz.getInterfaces();
+for(Class c : interfaces) {
+    System.out.println(c);
+}
+
+获取运行时类的父类实现的接口
+Class clazz = Person.class;
+Class[] interfaces1 = clazz.getSuperclass().getInterfaces();
+for(Class c : interfaces1) {
+     System.out.println(c);
+} 
+
+获取运行时类所在的包
+Class clazz = Person.class;
+Package pack = clazz.getPackage();
+System.out.println(pack);
+
+获取运行时类声明的注解
+Class clazz = Person.class;
+Annotation annotations = clazz.getAnnotations();
+for(Annotation annos : annotations) {
+    System.out.println(annos);
+}

@@ -1,0 +1,16 @@
+获取构造器结构
+
+Class clazz = Person.class;
+// getConstructors(): 获取当前运行时类中声明为public的构造器
+Constructor[] cons = clazz.getConstructors();
+for(Constructor c : cons) {
+    System.out.println(c);
+}
+
+System.out.println();
+
+// getDeclaredConstructors(): 获取当前运行时类中声明的所有构造器
+Constructor[] dcons = clazz.getDeclaredConstructors();
+for(Constructor c : dcons) {
+    System.out.println(c);
+}

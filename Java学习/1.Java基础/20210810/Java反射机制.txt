@@ -1,0 +1,84 @@
+Java反射机制
+
+
+反射的测试
+请往下看内容
+public class Person {
+    private String name;
+    public int age;
+
+    public Person(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
+
+    private Person(String name) {
+        this.name = name;
+    }
+
+    public Persion() {
+
+    }
+
+    public void show() {
+        System.out.print("你好");
+    }
+
+    private String showNation(String nation) {
+        System.out.print("你好: " + nation);
+        return nation;
+    }
+}
+
+反射之前，对于Person的操作
+//1. 创建Person类的对象（Persion的实例化）
+Person p1 = new Person("Tom", 12);
+//2. 通过对象，调用其内部的属性、方法
+p1.age = 10;
+p1.show();
+//在Person类外部，不可以通过Person类的对象调用其内部私有结构。
+//比如：name、showNation()以及私有的构造器
+
+反射之后，对于Person的操作
+Class clazz = Person.class;
+// 1. 通过反射，创建Person类的对象
+// 获取构造器, 构造器第一个参数为String类型，第二个参数为int类型，根据构造器参数填写实参
+Constructor cons = clazz.getConstructor(String.class, int.class);
+// 实例化成一个对象
+Object obj = cons.newInstance("Tom", 12);
+// 强转成obj
+Person p = (Person) obj;
+
+//2.通过反射，调用对象指定的属性、方法
+// 调用属性
+Field age = clazz.getDeclaredField("age");
+// 设置属性的值
+// 第一个参数为对象，第二个为值
+age.set(p, 10);
+
+// 调用方法
+Method show = clazz.getDeclaredMethod("show");
+show.invoke(p);
+
+// 通过反射，可以调用Person类的私有结构的。比如: 私有的构造器、方法、属性
+// 调用私有的构造器
+Constructor cons1 = clazz.getDeclaredConstructor(String.class);
+cons1.setAccessible(true);
+Person p1 = (Person) cons1.newInstance("Jerry");
+
+// 调用私有的属性
+Field name = clazz.getDeclaredField("name");
+name.setAccessible(true);
+name.set(p1, "Han"); 
+
+// 调用私有的方法
+Method showNation = clazz.getDeclaredMethod("showNation", String.class);
+showNation.setAccessible(true);
+String nation = (String) showNation.invoke(p1, "中国"); // 相当于String nation = p1.showNation("中国");
+
+// 疑问1: 通过直接new的方式或反射的方式都可以调用公共的结构，开发中到底用哪个？
+// 建议： 直接new的方式
+// 什么时候会使用：反射的方式。反射的特征：动态性
+
+// 疑问2: 反射机制与面向对象中的封装性是不是矛盾的？如何看待两个技术？
+// 不矛盾。 
