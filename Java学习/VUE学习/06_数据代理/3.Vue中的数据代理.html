@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Vue中的数据代理</title>
+</head>
+<body>
+
+<div id="root">
+    <h2>学校名称： {{name}}</h2>
+    <h2>学校地址： {{address}}</h2>
+</div>
+
+<script type="text/javascript">
+    Vue.config.productionTip = false;
+
+    new Vue({
+        el: "#root",
+        data() {
+            return {
+                name: '尚硅谷',
+                address: 'aaa'
+            }
+        }
+    })
+</script>
+</body>
+</html>

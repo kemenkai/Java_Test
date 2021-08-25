@@ -1,0 +1,25 @@
+StreamApi-java9增加特性
+
+List<Integer> list = Arrays.asList(1,2,3,4,5,6,7,8,9);
+
+// takeWhile 返回从开头开始的按照指定规则尽量多的元素
+list.stream().takeWhile(x -> x < 5).forEach(System.out :: println);
+
+// dropWhile(): 与taskWhile 相反，返回剩余的元素
+list.stream().dropWhile(x -> x < 5).forEach(System.out :: println);
+
+
+// of() 参数中的多个元素，可以包含null值
+Stream.of(1,2,3,null);
+
+// of() 参数不能存储单个null值, 否则报异常
+Stream.of(null);
+
+// ofNullable: 形参变量是可以为null值
+Integer i = 10;
+i = null;
+Stream.ofNullable(i);
+
+
+// iterate： java9 中新增的重载方法
+Stream.iterate(0, x -> x < 100, x -> x + 1).forEach(System.out :: println);

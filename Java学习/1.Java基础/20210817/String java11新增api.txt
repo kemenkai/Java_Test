@@ -1,0 +1,23 @@
+String java11新增api
+
+
+// isBlank(): 判断字符串是否为空白
+System.out.println("   \t  \t  \n".isBlank());
+
+// strip(): 去除首位空白
+System.out.println("-----"+ "   \t  \t  \n".strip() + "-----------");
+
+// stripTrailing(): 去除尾部空白
+System.out.println("-----"+ "   \t  \t  \n".stripTrailing() + "-----------");
+
+// stripLeading(): 去除首部空白
+System.out.println("-----"+ "   \t  \t  \n".stripLeading() + "-----------");
+
+// repeat(int count): 复制
+String str1 = "abc";
+String str2 = str1.repeat(5);
+System.out.println(str2);
+
+// lines().count(): 行数统计
+String str1 = "abc\ndefg";
+System.out.println(str1.lines().count());
